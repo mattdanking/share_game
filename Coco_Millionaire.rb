@@ -1,5 +1,6 @@
 # require '.\Coco_refactor.rb'
 # include CocoMethods
+# hola Mattdanking
 
 selling = true
 money = 0.0
@@ -18,34 +19,34 @@ employee_daily_cost = 200 #daily cost per employee per harvest day
 employee_harvest_rate = 10 #each employees harvest rate per hour
 
 
-puts %Q{ 
-                                                                                       
-  .mMMMMM~.                                           
- .MMMMMMMMM~.                                      
- ^   .MMMMMMMMMMMMM~.                                
-      .MMMMMMMMMMMMMMM~.       WELLCOME TO ...                           
-  .MMMMMMMMMMMMMMMMMMMMm~.              
- .MMMMMMMM.MMMMMMMMm~.   ^               
- MMMM.     MMM/MMMMMm~.                  
-MM,        MMM/  NMMMm~.       .8888D88D                 .88$$888D              
-^          MMMM/  .NMMm^.     88.      88               88D      .8D              
-           MMMM/    MM~^     88         8              D8D         8     
-          .MMMM/       ^    888                        88          
-          .MMMM/            888              88.888   888               88.88   
-         ./MMM/.            888             88    88  888.            88.   88   
-        ./MMMM/             888            888    888  888            88     88     
-       ./MMMMM/             .888.        8 888    88I  8888        .= 88.   .88.    
-      ./MMMMM/               .8888    .88   88    88    O888      8   O88   88.  
+puts %Q{
+
+  .mMMMMM~.
+ .MMMMMMMMM~.
+ ^   .MMMMMMMMMMMMM~.
+      .MMMMMMMMMMMMMMM~.       WELLCOME TO ...
+  .MMMMMMMMMMMMMMMMMMMMm~.
+ .MMMMMMMM.MMMMMMMMm~.   ^
+ MMMM.     MMM/MMMMMm~.
+MM,        MMM/  NMMMm~.       .8888D88D                 .88$$888D
+^          MMMM/  .NMMm^.     88.      88               88D      .8D
+           MMMM/    MM~^     88         8              D8D         8
+          .MMMM/       ^    888                        88
+          .MMMM/            888              88.888   888               88.88
+         ./MMM/.            888             88    88  888.            88.   88
+        ./MMMM/             888            888    888  888            88     88
+       ./MMMMM/             .888.        8 888    88I  8888        .= 88.   .88.
+      ./MMMMM/               .8888    .88   88    88    O888      8   O88   88.
      //MMMM//                  .888888       88888        .888888       88888
 
-  .$$$.  .$$ .$$. .$$   .$$   .$$  .$$$$$  .$$  .$$   .$$.   .$$ .$$$$$$ .$$$$$     
-  .$$$$..$S$ .$$  .$$   .$$   .$$ .$$   $$ .$$$ .$$  .$$$$   .$$ .$$ .$$ .$$...     
-  .$$.$$$.$$ .$$  .$$   .$$   .$$ .$$   $$ .$$$ $$$  .$$ $$  .$$ .$$:$$  .$$$$$     
-  .$$ .$ .$$ .$$  .$$   .$$.. .$$  $$.  $$ .$$.$$$$ .$$$$$$$ .$$ .$$ \\$\\ .$$...     
-  .$$    .$$ .$$  .$$$$$.$$$$$.$$   .$$$/  .$$ .$$$.$$$  .$$$.$$ .$$. \\$\\.$$$$$  
+  .$$$.  .$$ .$$. .$$   .$$   .$$  .$$$$$  .$$  .$$   .$$.   .$$ .$$$$$$ .$$$$$
+  .$$$$..$S$ .$$  .$$   .$$   .$$ .$$   $$ .$$$ .$$  .$$$$   .$$ .$$ .$$ .$$...
+  .$$.$$$.$$ .$$  .$$   .$$   .$$ .$$   $$ .$$$ $$$  .$$ $$  .$$ .$$:$$  .$$$$$
+  .$$ .$ .$$ .$$  .$$   .$$.. .$$  $$.  $$ .$$.$$$$ .$$$$$$$ .$$ .$$ \\$\\ .$$...
+  .$$    .$$ .$$  .$$$$$.$$$$$.$$   .$$$/  .$$ .$$$.$$$  .$$$.$$ .$$. \\$\\.$$$$$
 
 
-   	   Developed by: Matt King  
+   	   Developed by: Matt King
 
 
 }
@@ -104,7 +105,7 @@ while selling
 		    puts "-- By sundown, you've collected #{day_harvest} coconuts! Nice!"
 		    puts " "
 		    total_harvest += day_harvest
-		    employee_total_cost = employees * employee_daily_cost 
+		    employee_total_cost = employees * employee_daily_cost
 		    if (employees > 0) && (employee_total_cost < money)
 		    	employee_harvest = employees * employee_harvest_rate * workday
 		    	total_harvest += employee_harvest
@@ -127,12 +128,12 @@ while selling
 				print "$"
 				set_price = gets.to_f #users set price
 				puts
-			    puts "The beachgoers begin to trickle over to you.." 
+			    puts "The beachgoers begin to trickle over to you.."
 			    day += 1
 			    if curr_temp <= 65
 			    	temp_mult = 0.75
 	    			demand_mult = temp_mult * weather_mult
-	    			demand_price = demand_mult * avg_price 
+	    			demand_price = demand_mult * avg_price
     				sell_ratio = (demand_price / set_price).round(2) #if the demand price is higher than set price, sell all. if lower, sell less
 				    if 	sell_ratio > 1
 				    	sold = total_harvest
@@ -179,14 +180,14 @@ while selling
 					    	puts "You hardly sold any coconuts, you should probably lower your price much more."
 					    end
 					    puts
-				    	puts "You banked $#{'%.2f' % income} today for a total of $#{'%.2f' % money}"		    
+				    	puts "You banked $#{'%.2f' % income} today for a total of $#{'%.2f' % money}"
 					    puts " "
 	 				end
 
 			    elsif curr_temp > 65 && curr_temp <= 75
 			    	temp_mult = 1.0
 			    	demand_mult = temp_mult * weather_mult
-	    			demand_price = demand_mult * avg_price 
+	    			demand_price = demand_mult * avg_price
     				sell_ratio = (demand_price / set_price).round(2) #if the demand price is higher than set price, sell all. if lower, sell less
 				     if sell_ratio > 1
 				    	sold = total_harvest
@@ -239,7 +240,7 @@ while selling
 			    elsif curr_temp > 75 && curr_temp <= 85
 			    	temp_mult = 1.4
 			    	demand_mult = temp_mult * weather_mult
-	    			demand_price = demand_mult * avg_price 
+	    			demand_price = demand_mult * avg_price
     				sell_ratio = (demand_price / set_price).round(2) #if the demand price is higher than set price, sell all. if lower, sell less
 				     if sell_ratio > 1
 				    	sold = total_harvest
@@ -292,7 +293,7 @@ while selling
 			    elsif curr_temp > 85 && curr_temp <= 95
 			    	temp_mult = 1.7
 			    	demand_mult = temp_mult * weather_mult
-	    			demand_price = demand_mult * avg_price 
+	    			demand_price = demand_mult * avg_price
     				sell_ratio = (demand_price / set_price).round(2) #if the demand price is higher than set price, sell all. if lower, sell less
 				     if sell_ratio > 1
 				    	sold = total_harvest
@@ -345,7 +346,7 @@ while selling
 			    else
 			    	temp_mult = 2
 			    	demand_mult = temp_mult * weather_mult
-	    			demand_price = demand_mult * avg_price 
+	    			demand_price = demand_mult * avg_price
     				sell_ratio = (demand_price / set_price).round(2) #if the demand price is higher than set price, sell all. if lower, sell less
 				     if sell_ratio > 1
 				    	sold = total_harvest
@@ -588,7 +589,7 @@ while selling
 				puts " "
 				puts "You don't have any money to buy - go out and make some!"
 				puts " "
-			end	
+			end
 
 		else
 			puts " "
@@ -599,14 +600,14 @@ while selling
 		puts " "
 		puts %Q{
 
-				Congrats, you're a 
+				Congrats, you're a
 
-  .$$$.  .$$ .$$. .$$   .$$   .$$  .$$$$$  .$$  .$$   .$$.   .$$ .$$$$$$ .$$$$$     
-  .$$$$..$S$ .$$  .$$   .$$   .$$ .$$   $$ .$$$ .$$  .$$$$   .$$ .$$ .$$ .$$...     
-  .$$.$$$.$$ .$$  .$$   .$$   .$$ .$$   $$ .$$$ $$$  .$$ $$  .$$ .$$:$$  .$$$$$     
-  .$$ .$ .$$ .$$  .$$   .$$.. .$$  $$.  $$ .$$.$$$$ .$$$$$$$ .$$ .$$ \\$\\ .$$...     
-  .$$    .$$ .$$  .$$$$$.$$$$$.$$   .$$$/  .$$ .$$$.$$$  .$$$.$$ .$$. \\$\\.$$$$$ 
-   
+  .$$$.  .$$ .$$. .$$   .$$   .$$  .$$$$$  .$$  .$$   .$$.   .$$ .$$$$$$ .$$$$$
+  .$$$$..$S$ .$$  .$$   .$$   .$$ .$$   $$ .$$$ .$$  .$$$$   .$$ .$$ .$$ .$$...
+  .$$.$$$.$$ .$$  .$$   .$$   .$$ .$$   $$ .$$$ $$$  .$$ $$  .$$ .$$:$$  .$$$$$
+  .$$ .$ .$$ .$$  .$$   .$$.. .$$  $$.  $$ .$$.$$$$ .$$$$$$$ .$$ .$$ \\$\\ .$$...
+  .$$    .$$ .$$  .$$$$$.$$$$$.$$   .$$$/  .$$ .$$$.$$$  .$$$.$$ .$$. \\$\\.$$$$$
+
 		}
 		puts "It only took you #{day} days to make $#{'%.2f' % (money)}!"
 		puts " "
